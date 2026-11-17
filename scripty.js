@@ -45,10 +45,10 @@ if (!/[^\s]/.test(o.contents)) {
     elem.dataset.shown = o.filled;
     if (o.filled) {
       elem.innerText = o.contents;
-      elem.style.backgroundColor = "green";
+      elem.style.backgroundColor = "";
     } else {
-      elem.style.backgroundColor = "lightgreen";
-      elem.innerText = " ";
+      elem.style.backgroundColor = "yellow";
+      elem.innerText = "_";
     }
     return elem;
   });
@@ -62,7 +62,9 @@ if (!/[^\s]/.test(o.contents)) {
 }
 
 function addFocus(element) {
+  element.style.backgroundColor = "coral";
   element.contentEditable = true;
+  element.innerText=""
   element.addEventListener("input", (e) => {
     verifyText(e);
   });
